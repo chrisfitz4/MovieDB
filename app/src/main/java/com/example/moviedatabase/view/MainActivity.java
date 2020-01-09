@@ -101,8 +101,9 @@ public class MainActivity extends AppCompatActivity implements MyRVAdapter.Trans
 
 
     public void onClick(View view){
-//        movies.clear();
+        movies.clear();
 //        instance.getMovies(editText.getText().toString().trim()).enqueue(new Callback<RepoResultQuery>() {
+//
 //            @Override
 //            public void onResponse(Call<RepoResultQuery> call, Response<RepoResultQuery> response) {
 //                Log.d("TAG_X", "onResponse: "+movies.size());

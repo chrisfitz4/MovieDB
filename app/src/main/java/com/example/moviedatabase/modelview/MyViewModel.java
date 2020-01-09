@@ -33,10 +33,15 @@ public class MyViewModel extends AndroidViewModel {
     }
 
     public void getRepo(String toSearch){
+
         instance.getMovies(toSearch).enqueue(new Callback<RepoResultQuery>() {
             @Override
             public void onResponse(Call<RepoResultQuery> call, Response<RepoResultQuery> response) {
-                final String name = response.body().getMovies().get(0).getTitle();
+
+                String name = "";
+                if (response.body().getMovies().size() != 0) {
+                    name = response.body().getMovies().get(0).getTitle();
+                }
                 liveData.setValue(response.body());
                 Log.d("TAG_X", "onResponse: "+name);
             }
